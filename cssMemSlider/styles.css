@@ -59,6 +59,8 @@ input[name="slide"] {
   display: none;
 }
 
+/* dots control */
+
 .dots {
   display: flex;
 }
@@ -74,35 +76,32 @@ input[name="slide"] {
 }
 
 .dot-area > .dot {
-    display: block;
-    width: 50%;
-    height: 50%;
-    border: 3px solid #71aaff;
-    border-radius: 50%;
-    background-color: #71aaff;
-    transition: background-color 0.3s;
+  display: block;
+  width: 50%;
+  height: 50%;
+  border: 3px solid #71aaff;
+  border-radius: 50%;
+  background-color: #71aaff;
+  transition: background-color 0.3s;
 }
 
 #r1:checked ~ .navigation .dot1,
 #r2:checked ~ .navigation .dot2,
 #r3:checked ~ .navigation .dot3,
-#r4:checked ~ .navigation .dot4
-{
-    background-color: transparent;
+#r4:checked ~ .navigation .dot4 {
+  background-color: transparent;
 }
 
 #r1:active ~ .navigation .dot1,
 #r2:active ~ .navigation .dot2,
 #r3:active ~ .navigation .dot3,
-#r4:active ~ .navigation .dot4
-{
-    background-color: rgb(211, 207, 207);
+#r4:active ~ .navigation .dot4 {
+  background-color: rgb(211, 207, 207);
 }
 
-
 .dot-area:hover .dot {
-    background-color: #ffffff;
-    border: 3px solid #ffffff;
+  background-color: #ffffff;
+  border: 3px solid #ffffff;
 }
 
 /* slider logic */
@@ -139,5 +138,82 @@ input[name="slide"] {
 
   to {
     margin-left: 0%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .navigation {
+    flex-direction: column-reverse;
+    margin-top: 3vh;
+  }
+
+  .dots {
+    justify-content: center;
+    margin-bottom: 3vh;
+  }
+
+  .dot-area {
+    width: 3vh;
+    height: 3vh;
+    margin-right: 3vh;
+  }
+
+  .text-line {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    background-color: #ffffff;
+  }
+
+  .wrapper {
+    background-color: rgb(243, 207, 161);
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .slider {
+    width: 435%;
+  }
+
+  .slider .slide {
+      margin-right: 2%;
+  }
+  .navigation {
+    margin-top: 2vh;
+  }
+
+  .dots {
+    margin-bottom: 2vh;
+  }
+
+  .dot-area {
+    width: 1vh;
+    height: 1vh;
+    margin-right: 1vh;
+  }
+
+  .text-line {
+    font-size: 0.9rem;
+  }
+
+  /* slider logic */
+
+#r1:checked ~ .slider .s1 {
+    margin-left: 0;
+  }
+
+  #r2:checked ~ .slider .s1 {
+    margin-left: -28%;
+  }
+
+  #r3:checked ~ .slider .s1 {
+    margin-left: -55%;
+  }
+
+  #r4:checked ~ .slider .s1 {
+    margin-left: -82%;
   }
 }
