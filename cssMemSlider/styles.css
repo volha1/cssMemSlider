@@ -1,89 +1,119 @@
-
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    box-sizing: border-box;
-    background-color: antiquewhite;
+  box-sizing: border-box;
+  background-color: rgb(243, 207, 161);
 }
 
 .wrapper {
-    max-width: 60%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    overflow:hidden;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
+/* slider */
 .slider {
-    width: 400%;
-    height:100%;
-    display:flex;
+  width: 400%;
+  height: 100%;
+  display: flex;
 }
 
 input[name="slide"] {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
+  transition: all 0.6s ease;
 }
 
 .slide {
-    width: 25%;
-    transition: all .6s ease;
+  width: 25%;
+  transition: all 0.6s ease;
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
+/* navigation */
 .navigation {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 5%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 5%;
 }
 
-p {
-    font-size: 1.3rem;
+/* text */
+.text {
+  display: flex;
+  width: 100%;
+}
+
+.text-line {
+  font-size: 1.3rem;
+  display: none;
 }
 
 .dots {
-    display: flex;
+  display: flex;
 }
 
 .bar {
-    display:block;
-    width: 3vh;
-    height: 3vh;
-    border-radius: 50%;
-    margin-right: 2vh;
-    cursor: pointer;
-    background-color: #71AAFF;
+  display: block;
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  margin-right: 2vh;
+  cursor: pointer;
+  background-color: #71aaff;
 }
 
 .bar:last-child {
-    margin-right: 0px;
+  margin-right: 0;
 }
 
 .bar:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-#r1:checked ~ .s1 {
-    margin-left: 0;
+/* slider logic */
+
+#r1:checked ~ .slider .s1 {
+  margin-left: 0;
 }
 
-#r2:checked ~ .s1 {
-    margin-left: -25%;
+#r2:checked ~ .slider .s1 {
+  margin-left: -25%;
 }
 
-#r3:checked ~ .s1 {
-    margin-left: -50%;
+#r3:checked ~ .slider .s1 {
+  margin-left: -50%;
 }
 
-#r4:checked ~ .s1 {
-    margin-left: -75%;
+#r4:checked ~ .slider .s1 {
+  margin-left: -75%;
 }
 
+/* text logic */
+#r1:checked ~ .navigation .line1,
+#r2:checked ~ .navigation .line2,
+#r3:checked ~ .navigation .line3,
+#r4:checked ~ .navigation .line4 {
+  display: block;
+  animation: 0.6s ease-in slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
