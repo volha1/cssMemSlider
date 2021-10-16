@@ -63,22 +63,46 @@ input[name="slide"] {
   display: flex;
 }
 
-.bar {
+.dot-area {
   display: block;
-  width: 3vh;
-  height: 3vh;
+  width: 5vh;
+  height: 5vh;
   border-radius: 50%;
-  margin-right: 2vh;
   cursor: pointer;
-  background-color: #71aaff;
+  background-color: transparent;
+  transition: 0.6s linear;
 }
 
-.bar:last-child {
-  margin-right: 0;
+.dot-area > .dot {
+    display: block;
+    width: 50%;
+    height: 50%;
+    border: 3px solid #71aaff;
+    border-radius: 50%;
+    background-color: #71aaff;
+    transition: background-color 0.3s;
 }
 
-.bar:hover {
-  transform: scale(1.1);
+#r1:checked ~ .navigation .dot1,
+#r2:checked ~ .navigation .dot2,
+#r3:checked ~ .navigation .dot3,
+#r4:checked ~ .navigation .dot4
+{
+    background-color: transparent;
+}
+
+#r1:active ~ .navigation .dot1,
+#r2:active ~ .navigation .dot2,
+#r3:active ~ .navigation .dot3,
+#r4:active ~ .navigation .dot4
+{
+    background-color: rgb(211, 207, 207);
+}
+
+
+.dot-area:hover .dot {
+    background-color: #ffffff;
+    border: 3px solid #ffffff;
 }
 
 /* slider logic */
@@ -105,10 +129,10 @@ input[name="slide"] {
 #r3:checked ~ .navigation .line3,
 #r4:checked ~ .navigation .line4 {
   display: block;
-  animation: 0.6s ease-in slidein;
+  animation: 0.6s ease-in textin;
 }
 
-@keyframes slidein {
+@keyframes textin {
   from {
     margin-left: 30%;
   }
