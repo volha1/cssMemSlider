@@ -200,7 +200,7 @@ input[name="slide"] {
   }
 
   /* slider logic */
-#r1:checked ~ .slider .s1 {
+  #r1:checked ~ .slider .s1 {
     margin-left: 0;
   }
 
