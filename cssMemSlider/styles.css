@@ -63,12 +63,13 @@ input[name="slide"] {
 
 .dots {
   display: flex;
+  margin-right:-1%;
 }
 
 .dot-area {
   display: block;
-  width: 5vh;
-  height: 5vh;
+  width: 4vh;
+  height: 4vh;
   border-radius: 50%;
   cursor: pointer;
   background-color: transparent;
@@ -150,6 +151,7 @@ input[name="slide"] {
   .dots {
     justify-content: center;
     margin-bottom: 3vh;
+    margin-right:0%;
   }
 
   .dot-area {
